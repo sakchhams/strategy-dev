@@ -1,0 +1,24 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/src"
+  ],
+  "pylint.enabled": false,
+  "ruff.nativeServer": "on",
+  "ruff.configurationPreference": "filesystemFirst",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+    "editor.formatOnSave": true
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true
+  }
+}

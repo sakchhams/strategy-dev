@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "strategy-dev"
+version = "0.1.0"
+description = "Python 3.13 project scaffold for strategy development and improvement by agents."
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "pyarrow>=23.0.1",
+    "ta-lib>=0.6.8",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.15.0",
+  "ruff>=0.11.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/strategy_dev"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "B",
+  "UP",
+  "SIM",
+  "C4",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+pretty = true
+show_error_codes = true
+warn_unreachable = true
+mypy_path = "src"
+packages = ["strategy_dev"]
+
+[dependency-groups]
+dev = [
+    "pandas-stubs>=3.0.0.260204",
+]
